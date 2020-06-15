@@ -4,16 +4,27 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Euge/Desktop/Proyect_ArqCompu/main.cpp" "C:/Users/Euge/Desktop/Proyect_ArqCompu/cmake-build-debug/CMakeFiles/untitled1.dir/main.cpp.obj"
+  "/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/Clases.cpp" "/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/cmake-build-debug/CMakeFiles/untitled1.dir/Clases.cpp.o"
+  "/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/main.cpp" "/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/cmake-build-debug/CMakeFiles/untitled1.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "GRAPHICS_API_OPENGL_33"
+  "PLATFORM_DESKTOP"
+  )
+
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "_deps/raylib-build/src"
+  "_deps/raylib-src/src/external/glfw/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/cmake-build-debug/_deps/raylib-build/src/CMakeFiles/raylib_static.dir/DependInfo.cmake"
+  "/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/cmake-build-debug/_deps/raylib-build/src/external/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

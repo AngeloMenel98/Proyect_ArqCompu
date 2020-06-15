@@ -6,11 +6,25 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Euge/Desktop/Proyect_ArqCompu/main.cpp
+/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/Clases.cpp
+Clases.h
+/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/Clases.h
+
+/home/martin/Desktop/TPS-PROG/Proyect_ArqCompu/Clases.h
+cstring
+-
 iostream
 -
-conio.h
+unistd.h
 -
-stdlib.h
+thread
+-
+raylib.h
+-
+
+_deps/raylib-build/src/raylib.h
+stdarg.h
+-
+stdbool.h
 -
 

@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\untitled1.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\untitled1.dir/objects.a @CMakeFiles\untitled1.dir\objects1.rsp
-C:\msys64\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\untitled1.dir/objects.a -Wl,--no-whole-archive  -o untitled1.exe -Wl,--out-implib,libuntitled1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\untitled1.dir\linklibs.rsp
+/usr/bin/c++  -g   CMakeFiles/untitled1.dir/main.cpp.o CMakeFiles/untitled1.dir/Clases.cpp.o  -o untitled1  _deps/raylib-build/src/libraylib.a _deps/raylib-build/src/external/glfw/src/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.so -lm -ldl /usr/lib/x86_64-linux-gnu/libX11.so -lpthread -lm -lpthread /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so 

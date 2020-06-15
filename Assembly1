@@ -16,7 +16,6 @@ loop
 				add		r12,r12,#1
 				b		loop
 done
-				
 				mov		r4,#1
 				ldmfd	sp!,{r4}
 				mov		pc,lr
@@ -35,4 +34,4 @@ loop1
 done1
 				ldmfd	sp!,{lr}
 				mov		pc,lr
-				
+		
