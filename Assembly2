@@ -1,0 +1,89 @@
+				bl		rebote
+				end
+rebote
+				mov		r4,#0x80 ; a
+				stmfd	sp!,{r4}
+loop
+				cmp		r4,#0
+				beq		done
+				mov		r0,r4
+				bl		mostrarenbinario
+				;bl		sleep
+				lsr		r4,r4,#1
+				b		loop
+done
+				mov		r4,#0x1
+loop2
+				cmp		r4,#0x40
+				beq		done2
+				mov		r0,r4
+				bl		mostrarenbinario
+				;bl		sleep
+				lsl		r4,r4,#1
+				b		loop2
+done2
+loop3
+				cmp		r4,#0
+				beq		done3
+				mov		r0,r4
+				bl		mostrarenbinario
+				;bl		sleep
+				lsr		r4,r4,#1
+				b		loop3
+done3
+				mov		r4,#0x1
+loop4
+				cmp		r4,#0x8
+				beq		done4
+				mov		r0,r4
+				bl		mostrarenbinario
+				;bl		sleep
+				lsl		r4,r4,#1
+				b		loop4
+done4
+loop5
+				cmp		r4,#0
+				beq		done5
+				mov		r0,r4
+				bl		mostrarenbinario
+				;bl		sleep
+				lsr		r4,r4,#1
+				b		loop5
+done5
+				mov		r4,#0x1
+loop6
+				cmp		r4,#0x2
+				beq		done6
+				mov		r0,r4
+				bl		mostrarenbinario
+				;bl		sleep
+				lsl		r4,r4,#1
+				b		loop6
+done6
+loop7
+				cmp		r4,#0
+				beq		done7
+				mov		r0,r4
+				bl		mostrarenbinario
+				;bl		sleep
+				lsr		r4,r4,#1
+				b		loop7
+done7
+				ldmfd	sp!,{r4}
+				mov		pc,lr
+				
+				
+mostrarenbinario
+				stmfd	sp!,{lr}
+				mov		r1,#0x80 ; mask
+loop1
+				cmp		r1,#0
+				ble		done1
+				tst		r0,r1
+				movne	r2,#1
+				moveq	r2,#0
+				lsr		r1,r1,#1
+				b		loop1
+done1
+				ldmfd	sp!,{lr}
+				mov		pc,lr

@@ -2,6 +2,8 @@
 #include <conio.h>
 #include <stdlib.h>
 
+
+
 using namespace std;
 
 void mostrarEnBinario(unsigned char);
@@ -19,42 +21,75 @@ void lacarrera();
 
 void rebote();
 
+string user = {"Angelo"};
+string pass = {"Arquitectura"};
 
 int main() {
     bool end = false;
-    int eleccion;
-    while (!end) {
-        cout << "\n\nIngrese: "
-             << "\n1: Choque"
-             << "\n2: Auto Fantastico"
-             << "\n3: La secuencia"
-             << "\n4: La cola"
-             << "\n5: Finalizar"
-             << "\n\nEleccion:  ";
-        cin >> eleccion;
-        switch (eleccion) {
-            case 1:
-                choque();
-                break;
-            case 2:
-                autoFantastico();
-                break;
-            case 3:
-                lasecuencia();
-                break;
-            case 4:
-                rebote();
-                break;
-            case 5:
-                end = true;
-                break;
-            default:
-                cout << "Comando incorrecto";
+    bool end1 = false;
+    int eleccion,intentos = 0;
+    string usuario,password;
+    while(!end1 && intentos < 3){
+        cout<<"\nLogin Usuario"
+            <<endl
+            <<endl
+            <<"Usuario: ";
+        getline(cin, usuario);
+        cout<<"Password: ";
+
+        char caracter;
+        caracter = getch ();
+        password = "";
+
+        while(caracter != 13){
+            if(caracter != 8){
+                password.push_back(caracter);
+                cout<<"*"; }
+            else{
+                if(password.length()>0)
+                    cout<< "\b \b";
+                    password = password.substr(0, password.length() - 1);
+                }
+            caracter=getch();
         }
+        if(usuario == user && password == pass){
+            cout<<"Bienvenido al sistema: "<<endl;
+            end1 = true;
+            while (!end) {
+                cout << "\n\nIngrese: "
+                     << "\n1: Choque"
+                     << "\n2: Auto Fantastico"
+                     << "\n3: La secuencia"
+                     << "\n4: La cola"
+                     << "\n5: Finalizar"
+                     << "\n\nEleccion:  ";
+                cin >> eleccion;
+                switch (eleccion) {
+                    case 1:
+                        choque();
+                        break;
+                    case 2:
+                        autoFantastico();
+                        break;
+                    case 3:
+                        lasecuencia();
+                        break;
+                    case 4:
+                        rebote();
+                        break;
+                    case 5:
+                        end = true;
+                        break;
+                    default:
+                        cout << "Comando incorrecto";
+                }
 
+            }
+        }else{
+            cout<<"La contrasena es incorrecta";
+            intentos++;
+        }
     }
-
-
 }
 
 void choque() {
@@ -62,9 +97,11 @@ void choque() {
     unsigned char tabla[7] = {0x81, 0x42, 0x24, 0x18, 0x18, 0x24, 0x42};
     while (!kbhit()) {
         for (int i = 0; i < 7; i++) {
-            cout << mostrarEnBinarioString(tabla[i]);
+
+            mostrarEnBinario(tabla[i]);
             cout << "\r" << flush;
             _sleep(200);
+
         }
     }
     cout << "\nPresione una tecla para regresar_";

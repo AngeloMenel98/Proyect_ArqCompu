@@ -1,0 +1,38 @@
+				bl		secuencia
+				end
+				
+secuencia
+tabla			dcb		0x80, 0xc0,0xe0, 0xf0, 0xf8, 0xfc, 0xfe, 0xff, 0x7f, 0x3f, 0x1f, 0xf, 0x7, 0x3, 0x1
+				mov		r4,#0
+				mov		r5,#tabla
+				stmfd	sp!,{r4}
+				mov		r12,#0 ; corrimiento en la tabla
+loop
+				cmp		r12,#15
+				beq		done
+				ldrb		r0,[r5,r12]
+				bl		mostrarenbinario
+				;bl		sleep
+				add		r12,r12,#1
+				b		loop
+done
+				
+				mov		r4,#1
+				ldmfd	sp!,{r4}
+				mov		pc,lr
+				
+mostrarenbinario
+				stmfd	sp!,{lr}
+				mov		r1,#0x80
+loop1
+				cmp		r1,#0
+				beq		done1
+				tst		r0,r1
+				movne	r2,#1
+				moveq	r2,#0
+				lsr		r1,r1,#1
+				b		loop1
+done1
+				ldmfd	sp!,{lr}
+				mov		pc,lr
+				
